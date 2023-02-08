@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --watch=static/,routes/,components/ dev.ts"
   },
   "lock": false,
   "importMap": "./import_map.json",
