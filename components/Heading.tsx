@@ -1,7 +1,7 @@
 type Props = {
   level: 1 | 2 | 3;
   css?: string;
-  children: string;
+  children: string | string[];
 };
 
 export const Heading = ({ level, css, children }: Props) => {
