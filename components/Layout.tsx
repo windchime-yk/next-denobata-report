@@ -1,5 +1,6 @@
 import { JSX } from "preact";
 import { Head } from "$fresh/runtime.ts";
+import { join } from "std/path/mod.ts";
 import { Header } from "./Header.tsx";
 import { Footer } from "./Footer.tsx";
 import { SITE_NAME } from "../config.ts";
@@ -39,7 +40,7 @@ export const Layout = ({ title, description, type, url, children }: Props) => {
         <meta property="og:url" content={url?.toString()} />
         <meta
           property="og:image"
-          content="/ogp.png"
+          content={join(url.origin, "ogp.png")}
         />
         <meta name="twitter:card" content="summary" />
         <link rel="stylesheet" href="/gfm.css" />
