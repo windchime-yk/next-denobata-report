@@ -4,7 +4,8 @@ import { Handlers } from "$fresh/server.ts";
 const modifyImage = (data: Uint8Array) =>
   new Promise<Uint8Array>((resolve) => {
     ImageMagick.read(data, (image) => {
-      image.extent(100, 100, Gravity.Center);
+      image.resize(90, 90);
+      image.extent(145, 145, Gravity.Center);
       image.write((data) => resolve(data));
     });
   });
