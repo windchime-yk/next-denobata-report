@@ -8,7 +8,7 @@ export const Footer = () => {
           <TextLink
             css="underline"
             href="https://deno.land"
-            target="_blank"
+            external
           >
             Deno公式Webサイト
           </TextLink>
@@ -17,7 +17,7 @@ export const Footer = () => {
           <TextLink
             css="underline"
             href="https://deno-ja.deno.dev"
-            target="_blank"
+            external
           >
             deno-ja公式Webサイト
           </TextLink>
@@ -26,7 +26,7 @@ export const Footer = () => {
           <TextLink
             css="underline"
             href="https://deno-ja.connpass.com"
-            target="_blank"
+            external
           >
             deno-ja connpassページ
           </TextLink>

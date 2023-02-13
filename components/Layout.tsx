@@ -1,5 +1,5 @@
 import { JSX } from "preact";
-import { asset, Head } from "$fresh/runtime.ts";
+import { Head } from "$fresh/runtime.ts";
 import { Header } from "./Header.tsx";
 import { Footer } from "./Footer.tsx";
 import { SITE_NAME } from "../config.ts";
