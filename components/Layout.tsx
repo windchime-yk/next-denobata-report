@@ -39,7 +39,7 @@ export const Layout = ({ title, description, type, url, children }: Props) => {
         <meta property="og:url" content={url?.toString()} />
         <meta
           property="og:image"
-          content="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4dd.png"
+          content="/ogp.png"
         />
         <meta name="twitter:card" content="summary" />
         <link rel="stylesheet" href="/gfm.css" />
