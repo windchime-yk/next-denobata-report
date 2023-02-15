@@ -1,3 +1,4 @@
+import { PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/Layout.tsx";
 import { Heading } from "../components/Heading.tsx";
 import { TextLink } from "../components/Link.tsx";
@@ -30,16 +31,20 @@ const mockData: Array<{
   },
 ];
 
-export default function Home() {
+export default function Home({ url }: PageProps) {
   return (
-    <Layout>
+    <Layout
+      description="Deno日本ユーザーグループが主催する『Denoばた会議 Monthly』のレポートサイトです"
+      type="website"
+      url={url}
+    >
       <section>
         <Heading level={2}>Denoばた会議 Monthly とは</Heading>
         <p class="mt-3">
           <TextLink
             css="underline"
             href="http://deno-ja.deno.dev"
-            target="_blank"
+            external
           >
             Deno日本ユーザーグループ（以降、deno-ja）
           </TextLink>がDiscordで月次開催しているイベントです。Deno最新バージョンの更新内容について社内事情も交えた解説がされたり、LTコーナーや質問共有コーナーがあります。<br />deno-jaには社員の方が数名いるため、Denoについて突っ込んだ質問にも回答をいただけるかもしれません。

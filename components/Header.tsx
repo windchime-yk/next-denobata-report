@@ -18,7 +18,7 @@ export const Header = () => {
 
       <TextLink
         href="https://github.com/deno-ja/denobata-monthly-report"
-        target="_blank"
+        external
       >
         <IconBrandGithub class="w-9 h-9" />
       </TextLink>
