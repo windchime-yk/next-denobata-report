@@ -1,35 +1,8 @@
 import { PageProps } from "$fresh/server.ts";
+import { extractHeading, markdownDataList } from "../core/getData.ts";
 import { Layout } from "../components/Layout.tsx";
 import { Heading } from "../components/Heading.tsx";
 import { TextLink } from "../components/Link.tsx";
-
-const mockData: Array<{
-  meta: {
-    title: string;
-  };
-  body: string;
-}> = [
-  {
-    meta: {
-      title: "第1回",
-    },
-    body: "テスト / テスト / テスト / テスト",
-  },
-  {
-    meta: {
-      title: "第2回",
-    },
-    body:
-      "テストテストテストテスト / テスト / テストテストテスト / テストテストテストテストテストテスト / テストテストテスト",
-  },
-  {
-    meta: {
-      title: "第3回",
-    },
-    body:
-      "テスト / テストテストテストテストテストテスト / テストテストテスト / テストテスト",
-  },
-];
 
 export default function Home({ url }: PageProps) {
   return (
@@ -54,22 +27,29 @@ export default function Home({ url }: PageProps) {
         <Heading level={2}>各回の内訳</Heading>
 
         <div class="mt-3 flex flex-col gap-3">
-          {mockData.map((data, index) => {
+          {markdownDataList.map((data, index) => {
+            const count = index + 1;
             return (
               <section
                 class="rounded border(gray-500 2)"
-                key={data.meta.title}
+                key={data?.meta.date}
               >
                 <a
                   class="block px-3 py-4 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  href={`/report/0${index + 1}`}
+                  href={data?.path}
                 >
-                  <Heading level={3}>{data.meta.title}</Heading>
-                  <p>{data.meta.title}の内訳は以下の通りです。</p>
-                  <div
-                    class="mt-3"
-                    dangerouslySetInnerHTML={{ __html: data.body }}
-                  />
+                  <Heading level={3}>{`第${count}回`}</Heading>
+                  <p>{`第${count}回`}の内訳は以下の通りです。</p>
+                  <ul class="mt-3 flex flex-wrap gap-3">
+                    {extractHeading(data?.content)?.map((item) => {
+                      if (item.level === 1) return;
+                      return (
+                        <li class="border(gray-500 b-2) px-3 py-1">
+                          {item.title}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </a>
               </section>
             );
