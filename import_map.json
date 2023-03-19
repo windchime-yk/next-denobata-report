@@ -11,6 +11,7 @@
     "std/": "https://deno.land/std@0.177.0/",
     "gfm": "https://deno.land/x/gfm@0.1.30/mod.ts",
     "markdown": "https://deno.land/x/markdown@v2.0.0/mod.ts",
-    "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.2/"
+    "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.2/",
+    "https://deno.land/std/encoding/_yaml/loader/loader.ts": "https://deno.land/std@0.179.0/encoding/_yaml/loader/loader.ts"
   }
 }
