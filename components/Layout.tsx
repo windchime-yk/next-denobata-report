@@ -37,7 +37,7 @@ export const Layout = ({ title, description, type, url, children }: Props) => {
         <meta property="og:type" content={type} />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:url" content={url?.toString()} />
-        <meta property="og:image" content={asset("/ogp.png")} />
+        <meta property="og:image" content={`${url.origin}/ogp.png`} />
         <meta name="twitter:card" content="summary" />
         <link rel="stylesheet" href="/gfm.css" />
       </Head>
