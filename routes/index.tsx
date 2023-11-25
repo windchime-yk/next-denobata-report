@@ -44,7 +44,7 @@ export default function Home({ url }: PageProps) {
                     {extractHeading(data?.content)?.map((item) => {
                       if (item.level === 1) return;
                       return (
-                        <li class="border(gray-500 b-2) px-3 py-1">
+                        <li class="bg-gray-200 dark:bg-gray-600 rounded px-3 py-1">
                           {item.title}
                         </li>
                       );
