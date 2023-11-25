@@ -1,6 +1,6 @@
-import { Marked, Renderer } from "markdown";
+import { marked, RendererObject } from "marked";
 
-class CustomRenderer extends Renderer {
+const renderer: RendererObject = {
   heading(text: string, level: number): string {
     const headingLevel = level + 1;
     const id = text
@@ -10,9 +10,9 @@ class CustomRenderer extends Renderer {
       .trim()
       .toLocaleLowerCase();
     return `<h${headingLevel} id="${id}">${text}</h${headingLevel}>`;
-  }
-  link(href: string, title: string, text: string): string {
-    if (/^https?:\/\//.test(href))
+  },
+  link(href: string, title: string | null | undefined, text: string): string {
+    if (/^https?:\/\//.test(href)) {
       return `
       <a href="${href}" title="${title}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
         ${text}
@@ -24,9 +24,10 @@ class CustomRenderer extends Renderer {
         </svg>
       </a>
       `;
+    }
     return `<a href="${href}" title="${title}">${text}</a>`;
-  }
-}
+  },
+};
 
-Marked.setOptions({ renderer: new CustomRenderer() });
-export { Marked };
+marked.use({ renderer });
+export { marked };

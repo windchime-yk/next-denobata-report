@@ -1,6 +1,7 @@
 import { resolve } from "std/path/mod.ts";
+import { extract } from "std/encoding/front_matter/any.ts";
 import { getFileList } from "deno-util/file.ts";
-import { Marked } from "./marked.ts";
+import { marked } from "@/core/marked.ts";
 
 export type Meta = {
   date: Date;
@@ -9,19 +10,21 @@ export type Meta = {
 
 export type MarkdownList = Array<
   | {
-      meta: Meta;
-      content: string;
-      path: string;
-    }
+    meta: Meta;
+    content: string;
+    path: string;
+  }
   | undefined
 >;
 
 export const getMarkdownData = async (path: string) => {
   const decoder = new TextDecoder("utf-8");
   const markdown = decoder.decode(await Deno.readFile(path));
-  const { meta, content } = Marked.parse(markdown);
+  const { attrs, body } = extract<Meta>(markdown);
+  const content = marked.parse(body);
+
   return {
-    meta: meta as Meta,
+    meta: attrs,
     content,
   };
 };
@@ -44,7 +47,7 @@ export const markdownDataList: MarkdownList = await Promise.all(
       content,
       path,
     };
-  })
+  }),
 );
 
 export const extractHeading = (content: string | undefined) => {

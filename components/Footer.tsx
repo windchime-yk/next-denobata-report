@@ -1,4 +1,4 @@
-import { TextLink } from "./Link.tsx";
+import { TextLink } from "@/components/Link.tsx";
 
 export const Footer = () => {
   return (

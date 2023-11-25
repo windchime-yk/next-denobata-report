@@ -1,10 +1,10 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import { resolve } from "std/path/mod.ts";
-import { getMarkdownData, type Meta } from "../../core/getData.ts";
-import { Heading } from "../../components/Heading.tsx";
-import { Layout } from "../../components/Layout.tsx";
-import { TextLink } from "../../components/Link.tsx";
-import { SITE_NAME } from "../../config.ts";
+import { getMarkdownData, type Meta } from "@/core/getData.ts";
+import { Heading } from "@/components/Heading.tsx";
+import { Layout } from "@/components/Layout.tsx";
+import { TextLink } from "@/components/Link.tsx";
+import { SITE_NAME } from "@/config.ts";
 
 type HandlerProps = {
   meta: Meta;

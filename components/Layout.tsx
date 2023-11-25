@@ -1,8 +1,6 @@
 import { JSX } from "preact";
-import { asset, Head } from "$fresh/runtime.ts";
-import { Header } from "./Header.tsx";
-import { Footer } from "./Footer.tsx";
-import { SITE_NAME } from "../config.ts";
+import { Head } from "$fresh/runtime.ts";
+import { SITE_NAME } from "@/config.ts";
 
 type Props = {
   /** レポートのタイトル */
@@ -24,13 +22,7 @@ export const Layout = ({ title, description, type, url, children }: Props) => {
     <>
       <Head>
         <title>{reportTitle}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
-        <link
-          rel="shortcut icon"
-          href="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4dd.png"
-          type="image/x-icon"
-        />
         <meta property="og:site_name" content={SITE_NAME} />
         <meta property="og:title" content={reportTitle} />
         <meta property="og:description" content={description} />
@@ -41,19 +33,7 @@ export const Layout = ({ title, description, type, url, children }: Props) => {
         <meta name="twitter:card" content="summary" />
         <link rel="stylesheet" href="/gfm.css" />
       </Head>
-      <div
-        class="min-h-screen dark:bg-gray-800 dark:text-white"
-        style={{
-          display: "grid",
-          gridTemplateRows: "auto 1fr auto",
-        }}
-      >
-        <Header />
-        <main class="px-4 mx-auto w-full max-w-screen-md">
-          {children}
-        </main>
-        <Footer />
-      </div>
+      {children}
     </>
   );
 };

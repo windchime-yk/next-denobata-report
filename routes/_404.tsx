@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
-import { Layout } from "../components/Layout.tsx";
-import { Heading } from "../components/Heading.tsx";
+import { Layout } from "@/components/Layout.tsx";
+import { Heading } from "@/components/Heading.tsx";
 
 const TITLE = "404 Not Found";
 
