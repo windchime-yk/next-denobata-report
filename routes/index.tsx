@@ -1,8 +1,8 @@
 import { PageProps } from "$fresh/server.ts";
 import { extractHeading, markdownDataList } from "../core/getData.ts";
-import { Layout } from "../components/Layout.tsx";
-import { Heading } from "../components/Heading.tsx";
-import { TextLink } from "../components/Link.tsx";
+import { Layout } from "@/components/Layout.tsx";
+import { Heading } from "@/components/Heading.tsx";
+import { TextLink } from "@/components/Link.tsx";
 
 export default function Home({ url }: PageProps) {
   return (

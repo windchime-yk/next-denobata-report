@@ -1,8 +1,8 @@
 import { JSX } from "preact";
-import { asset, Head } from "$fresh/runtime.ts";
-import { Header } from "./Header.tsx";
-import { Footer } from "./Footer.tsx";
-import { SITE_NAME } from "../config.ts";
+import { Head } from "$fresh/runtime.ts";
+import { Header } from "@/components/Header.tsx";
+import { Footer } from "@/components/Footer.tsx";
+import { SITE_NAME } from "@/config.ts";
 
 type Props = {
   /** レポートのタイトル */

@@ -1,7 +1,7 @@
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-github.tsx";
-import { Heading } from "./Heading.tsx";
-import { TextLink } from "./Link.tsx";
-import { SITE_NAME } from "../config.ts";
+import { Heading } from "@/components/Heading.tsx";
+import { TextLink } from "@/components/Link.tsx";
+import { SITE_NAME } from "@/config.ts";
 
 export const Header = () => {
   return (

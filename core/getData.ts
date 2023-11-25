@@ -1,6 +1,6 @@
 import { resolve } from "std/path/mod.ts";
 import { getFileList } from "deno-util/file.ts";
-import { Marked } from "./marked.ts";
+import { Marked } from "@/core/marked.ts";
 
 export type Meta = {
   date: Date;
@@ -9,10 +9,10 @@ export type Meta = {
 
 export type MarkdownList = Array<
   | {
-      meta: Meta;
-      content: string;
-      path: string;
-    }
+    meta: Meta;
+    content: string;
+    path: string;
+  }
   | undefined
 >;
 
@@ -44,7 +44,7 @@ export const markdownDataList: MarkdownList = await Promise.all(
       content,
       path,
     };
-  })
+  }),
 );
 
 export const extractHeading = (content: string | undefined) => {
