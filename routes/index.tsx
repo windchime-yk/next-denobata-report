@@ -1,10 +1,24 @@
-import { PageProps } from "$fresh/server.ts";
-import { extractHeading, markdownDataList } from "@/core/getData.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { extractHeading, ReportMetaData } from "@/core/getData.ts";
 import { Layout } from "@/components/Layout.tsx";
 import { Heading } from "@/components/Heading.tsx";
 import { TextLink } from "@/components/Link.tsx";
 
-export default function Home({ url }: PageProps) {
+type HandlerProps = {
+  reports: ReportMetaData[];
+};
+
+export const handler: Handlers<HandlerProps> = {
+  async GET(req, ctx) {
+    const res = await fetch(`${new URL(req.url).origin}/api/report`);
+    const reports: ReportMetaData[] = await res.json();
+    return ctx.render({ reports });
+  },
+};
+
+export default function Home({ data, url }: PageProps<HandlerProps>) {
+  const { reports } = data;
+
   return (
     <Layout
       description="Deno日本ユーザーグループが主催する『Denoばた会議 Monthly』のレポートサイトです"
@@ -27,7 +41,7 @@ export default function Home({ url }: PageProps) {
         <Heading level={2}>各回の内訳</Heading>
 
         <div class="mt-3 flex flex-col gap-3">
-          {markdownDataList.map((data, index) => {
+          {reports.map((data, index) => {
             const count = index + 1;
             return (
               <section

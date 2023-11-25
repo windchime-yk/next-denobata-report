@@ -4,18 +4,17 @@ import { getFileList } from "deno-util/file.ts";
 import { marked } from "@/core/marked.ts";
 
 export type Meta = {
-  date: Date;
+  date: string;
   connpass: string;
 };
 
-export type MarkdownList = Array<
-  | {
-    meta: Meta;
-    content: string;
-    path: string;
-  }
-  | undefined
->;
+export type ReportMetaData = {
+  meta: Meta;
+  content: string;
+  path: string;
+};
+
+export type MarkdownList = Array<ReportMetaData | undefined>;
 
 export const getMarkdownData = async (path: string) => {
   const decoder = new TextDecoder("utf-8");

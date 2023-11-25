@@ -4,6 +4,7 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts"
   },
+  "unstable": ["kv"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "npm:preact@10.15.1"
@@ -23,6 +24,7 @@
     "gfm": "https://deno.land/x/gfm@0.1.30/mod.ts",
     "marked": "npm:marked@10.0.0",
     "icons/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/",
+    "$hono/": "https://deno.land/x/hono@v3.10.2/",
     "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.2/"
   },
   "lint": {
