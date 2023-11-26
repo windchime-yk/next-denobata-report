@@ -1,9 +1,12 @@
 import { type Handler } from "$fresh/server.ts";
 import { Hono } from "$hono/mod.ts";
+import { cors } from "$hono/middleware.ts";
 import { markdownDataList, ReportMetaData } from "@/core/getData.ts";
 
 const app = new Hono().basePath("/api");
 const kv = await Deno.openKv();
+
+app.use("*", cors({ origin: "*" }));
 
 app.get("/report", async (ctx) => {
   const { count } = ctx.req.query();
