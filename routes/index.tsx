@@ -10,8 +10,11 @@ type HandlerProps = {
 
 export const handler: Handlers<HandlerProps> = {
   async GET(req, ctx) {
+    console.log(req.url);
     const res = await fetch(`${new URL(req.url).origin}/api/report`);
+    console.log(res);
     const reports: ReportMetaData[] = await res.json();
+    console.log(reports);
     return ctx.render({ reports });
   },
 };
