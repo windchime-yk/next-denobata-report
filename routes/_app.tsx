@@ -13,6 +13,7 @@ export default function App({ Component }: AppProps) {
           href="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4dd.png"
           type="image/x-icon"
         />
+        <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
         <div

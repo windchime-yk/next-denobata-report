@@ -31,7 +31,7 @@ export default function Home({ url }: PageProps) {
             const count = index + 1;
             return (
               <section
-                class="rounded border(gray-500 2)"
+                class="rounded border-gray-500 border-2"
                 key={data?.meta.date}
               >
                 <a
