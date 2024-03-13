@@ -8,6 +8,7 @@
     "manifest": "deno task cli manifest $(pwd)",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
+  "lock": false,
   "lint": {
     "rules": {
       "tags": [
