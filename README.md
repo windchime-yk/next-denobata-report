@@ -4,7 +4,7 @@
 ## 使用技術
 - Deno@latest
 - Fresh@latest
-- Twind@latest
+- Tailwind CSS@latest
 
 ## 目的
 - TOPページの手動更新を自動化する
