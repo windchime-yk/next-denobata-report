@@ -27,7 +27,7 @@
     "@/": "./",
     "@preact/signals": "npm:@preact/signals@1.2.1",
     "@preact/signals-core": "npm:@preact/signals-core@1.5.0",
-    "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.2/",
+    "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.3/",
     "gfm": "https://deno.land/x/gfm@0.1.30/mod.ts",
     "icons/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/",
     "marked": "npm:marked@10.0.0",
