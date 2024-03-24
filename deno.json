@@ -26,7 +26,7 @@
     "$fresh/": "https://deno.land/x/fresh@1.6.5/",
     "@/": "./",
     "@preact/signals": "npm:@preact/signals@1.2.1",
-    "@preact/signals-core": "npm:@preact/signals-core@1.5.0",
+    "@preact/signals-core": "npm:@preact/signals-core@1.6.0",
     "deno-util/": "https://pax.deno.dev/windchime-yk/deno-util@v1.6.2/",
     "gfm": "https://deno.land/x/gfm@0.1.30/mod.ts",
     "icons/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/",
